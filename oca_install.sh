@@ -49,6 +49,11 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/server-tool
 sudo pip install -r $OE_OCA_HOME/server-tools/requirements.txt
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/operating-unit.git $OE_OCA_HOME/operating-unit/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/crm.git $OE_OCA_HOME/crm/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/hr.git $OE_OCA_HOME/hr/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-contact.git $OE_OCA_HOME/partner-contact/
+
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
 sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
 
