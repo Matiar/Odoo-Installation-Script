@@ -32,7 +32,7 @@ IS_ENTERPRISE="False"
 #set the superadmin password
 OE_SUPERADMIN="admin"
 OE_CONFIG="${OE_USER}-server"
-OE_OCA_HOME="/$OE_HOME/custom"
+OE_OCA_HOME="$OE_HOME/custom"
 
 
 #--------------------------------------------------
@@ -49,8 +49,16 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/server-tool
 sudo pip install -r $OE_OCA_HOME/server-tools/requirements.txt
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/operating-unit.git $OE_OCA_HOME/operating-unit/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
+sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
+
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
+
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
+
+sudo su root -c "echo 'addons_path=$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
+
 
 echo "-----------------------------------------------------------"
 echo "Done! "

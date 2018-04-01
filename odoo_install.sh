@@ -66,6 +66,7 @@ sudo pip install --upgrade pip
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
 
 echo -e "\n---- Install python libraries ----"
 sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd
@@ -108,6 +109,7 @@ sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 #--------------------------------------------------
 echo -e "\n==== Installing ODOO Server ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://www.github.com/odoo/odoo $OE_HOME_EXT/
+sudo pip install -r $OE_HOME_EXT/requirements.txt
 
 if [ $IS_ENTERPRISE = "True" ]; then
     # Odoo Enterprise install!
