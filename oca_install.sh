@@ -53,6 +53,7 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-e
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/crm.git $OE_OCA_HOME/crm/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/hr.git $OE_OCA_HOME/hr/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-contact.git $OE_OCA_HOME/partner-contact/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/purchase-workflow.git $OE_OCA_HOME/purchase-workflow/
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
 sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
@@ -62,7 +63,7 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
 
-sudo su root -c "echo 'addons_path=$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "echo 'addons_path=$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/hr,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/purchase-workflow,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
 
 
 echo "-----------------------------------------------------------"
