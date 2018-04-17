@@ -56,7 +56,9 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-con
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/purchase-workflow.git $OE_OCA_HOME/purchase-workflow/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
+
 sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
+sudo pip install -r $OE_OCA_HOME/partner-contact/requirements.txt
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
 
