@@ -66,7 +66,7 @@ sudo pip install --upgrade pip
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds
-sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypdf2
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypdf2 libmagickwand-dev
 
 echo -e "\n---- Install python libraries ----"
 sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd
