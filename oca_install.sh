@@ -23,7 +23,7 @@ OE_HOME_EXT="/$OE_USER/${OE_USER}-server"
 #Set to true if you want to install it, false if you don't need it or have it already installed.
 INSTALL_WKHTMLTOPDF="True"
 #Set the default Odoo port (you still have to use -c /etc/odoo-server.conf for example to use this.)
-OE_PORT="8069"
+OE_PORT="8010"
 #Choose the Odoo version which you want to install. For example: 10.0, 9.0, 8.0, 7.0 or saas-6. When using 'trunk' the master version will be installed.
 #IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 10.0
 OE_VERSION="10.0"
@@ -56,16 +56,20 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-con
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/purchase-workflow.git $OE_OCA_HOME/purchase-workflow/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/sale-workflow.git $OE_OCA_HOME/sale-workflow/
+sudo git clone --depth 1 --branch $OE_VERSION https://bitbucket.org/matiarrahman/odoo-community-addons.git $OE_OCA_HOME/odoo-community-addons/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/intrastat.git $OE_OCA_HOME/intrastat/
 
 sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
 sudo pip install -r $OE_OCA_HOME/partner-contact/requirements.txt
+sudo pip install -r $OE_OCA_HOME/odoo-community-addons/requirements.txt
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
 
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
 
-sudo su root -c "echo 'addons_path=$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/hr,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/reporting-engine,$OE_OCA_HOME/purchase-workflow,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "echo 'addons_path=$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/hr,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/reporting-engine,$OE_OCA_HOME/purchase-workflow,$OE_OCA_HOME/sale-workflow,$OE_OCA_HOME/odoo-community-addons,$OE_OCA_HOME/intrastat,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
 
 
 echo "-----------------------------------------------------------"
