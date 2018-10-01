@@ -55,15 +55,18 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/hr.git $OE_
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-contact.git $OE_OCA_HOME/partner-contact/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/purchase-workflow.git $OE_OCA_HOME/purchase-workflow/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
-sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
+#sudo git clone --depth 1 --branch $OE_VERSION https://github.com/modoolar/project_agile.git $OE_OCA_HOME/project_agile/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/sale-workflow.git $OE_OCA_HOME/sale-workflow/
 sudo git clone --depth 1 --branch $OE_VERSION https://bitbucket.org/matiarrahman/odoo-community-addons.git $OE_OCA_HOME/odoo-community-addons/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/intrastat.git $OE_OCA_HOME/intrastat/
 
-sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
+#sudo pip install -r $OE_OCA_HOME/project_agile/requirements.txt
+echo -e "\n === Installing requirements for partner-contact ==="
 sudo pip install -r $OE_OCA_HOME/partner-contact/requirements.txt
+echo -e "\n === Installing requirements for odoo-community-addons ==="
 sudo pip install -r $OE_OCA_HOME/odoo-community-addons/requirements.txt
 
+echo -e "\n==== Downloan GBS Repository and Install Dependencies ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
 
 echo -e "\n---- Setting permissions on home folder ----"
