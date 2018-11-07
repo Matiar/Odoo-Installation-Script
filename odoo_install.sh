@@ -32,6 +32,8 @@ IS_ENTERPRISE="True"
 #set the superadmin password
 OE_SUPERADMIN="admin"
 OE_CONFIG="${OE_USER}-server"
+# Set this ti True if you want to install POstgreSQL!
+INSTALL_POSTGRES = True
 
 ##
 ###  WKHTMLTOPDF download links
@@ -51,11 +53,14 @@ sudo apt-get upgrade -y
 #--------------------------------------------------
 # Install PostgreSQL Server
 #--------------------------------------------------
-#echo -e "\n---- Install PostgreSQL Server ----"
-#sudo apt-get install postgresql -y
 
-#echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
-#sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+if [ $INSTALL_POSTGRES = "True" ]; then
+   echo -e "\n---- Install PostgreSQL Server ----"
+   sudo apt-get install postgresql -y
+
+   echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
+   sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+fi
 
 #--------------------------------------------------
 # Install Dependencies
