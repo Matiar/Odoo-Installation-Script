@@ -74,7 +74,7 @@ sudo apt-get install python-dateutil python-feedparser python-ldap python-libxsl
 sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypdf2 libmagickwand-dev
 
 echo -e "\n---- Install python libraries ----"
-sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd passlib werkzeug psycopg2 Python-Chart reportlab mako psutil 
+sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd passlib werkzeug psycopg2 Python-Chart reportlab mako psutil pyPdf mock simplejson xlwt bson
 
 echo -e "\n--- Install other required packages"
 sudo apt-get install node-clean-css -y
