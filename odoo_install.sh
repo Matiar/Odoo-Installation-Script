@@ -28,12 +28,12 @@ OE_PORT="8010"
 #IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 10.0
 OE_VERSION="10.0"
 # Set this to True if you want to install Odoo 10 Enterprise!
-IS_ENTERPRISE="True"
+IS_ENTERPRISE="No"
 #set the superadmin password
 OE_SUPERADMIN="admin"
 OE_CONFIG="${OE_USER}-server"
 # Set this ti True if you want to install POstgreSQL!
-INSTALL_POSTGRES = True
+INSTALL_POSTGRES = "NO"
 
 ##
 ###  WKHTMLTOPDF download links
@@ -61,6 +61,8 @@ if [ $INSTALL_POSTGRES = "True" ]; then
    echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
    sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 fi
+
+sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 
 #--------------------------------------------------
 # Install Dependencies
