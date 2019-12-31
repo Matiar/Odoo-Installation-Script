@@ -54,22 +54,24 @@ sudo apt-get upgrade -y
 # Install PostgreSQL Server
 #--------------------------------------------------
 
-if [ $INSTALL_POSTGRES = "True" ]; then
-   echo -e "\n---- Install PostgreSQL Server ----"
-   sudo apt-get install postgresql -y
-
-   echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
-   sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
-fi
-
-sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+#if [ $INSTALL_POSTGRES = "True" ]; then
+#   echo -e "\n---- Install PostgreSQL Server ----"
+#   sudo apt-get install postgresql -y
+#
+#   echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
+#   sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+#fi
+#
+#sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 
 #--------------------------------------------------
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install tool packages ----"
 sudo apt-get install wget git python-pip gdebi-core -y
-sudo pip install --upgrade pip
+sudo export LC_ALL="en_US.UTF-8"
+sudo export LC_CTYPE="en_US.UTF-8"
+sudo dpkg-reconfigure locales
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds
@@ -77,6 +79,7 @@ sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypd
 apt-get install libxml2-dev libxslt-dev
 
 echo -e "\n---- Install python libraries ----"
+sudo pip install --upgrade pip
 sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd passlib werkzeug psycopg2 Python-Chart reportlab mako psutil pyPdf mock simplejson xlwt bson
 
 echo -e "\n--- Install other required packages"
