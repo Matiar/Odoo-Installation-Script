@@ -75,12 +75,13 @@ sudo dpkg-reconfigure locales
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil -y python-suds
-sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypdf2 libmagickwand-dev
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev python-pypdf2 libmagickwand-dev python-bson
 apt-get install libxml2-dev libxslt-dev
 
 echo -e "\n---- Install python libraries ----"
 sudo pip install --upgrade pip
 sudo pip install gdata psycogreen ofxparse XlsxWriter xlrd passlib werkzeug psycopg2 Python-Chart reportlab mako psutil pyPdf mock simplejson xlwt bson
+sudo pip install enum
 
 echo -e "\n--- Install other required packages"
 sudo apt-get install node-clean-css -y
