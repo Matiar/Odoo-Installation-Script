@@ -62,7 +62,7 @@ if [ $INSTALL_POSTGRES = "True" ]; then
    sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 fi
 
-sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+#sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 
 #--------------------------------------------------
 # Install Dependencies
