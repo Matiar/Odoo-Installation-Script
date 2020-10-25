@@ -72,7 +72,7 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
 
-sudo su root -c "echo 'addons_path=/odoo/odoo-server/addons,/odoo/odoo-server/odoo/addons,$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/partner-contact,$OE_OCA_HOME/hr,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/reporting-engine,$OE_OCA_HOME/purchase-workflow,$OE_OCA_HOME/sale-workflow,$OE_OCA_HOME/odoo-community-addons,$OE_OCA_HOME/intrastat,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
+#sudo su root -c "echo 'addons_path=/odoo/odoo-server/addons,/odoo/odoo-server/odoo/addons,$OE_OCA_HOME/web,$OE_OCA_HOME/server-tools,$OE_OCA_HOME/operating-unit,$OE_OCA_HOME/partner-contact,$OE_OCA_HOME/hr,$OE_OCA_HOME/project_agile,$OE_OCA_HOME/reporting-engine,$OE_OCA_HOME/purchase-workflow,$OE_OCA_HOME/sale-workflow,$OE_OCA_HOME/odoo-community-addons,$OE_OCA_HOME/intrastat,$OE_OCA_HOME/addons' >> /etc/${OE_CONFIG}.conf"
 
 
 echo "-----------------------------------------------------------"
