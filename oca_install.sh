@@ -52,6 +52,14 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/operating-u
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/crm.git $OE_OCA_HOME/crm/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/hr.git $OE_OCA_HOME/hr/
+
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/account-financial-tools.git $OE_OCA_HOME/account-financial-tools/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/account-financial-reporting.git $OE_OCA_HOME/account-financial-reporting/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/account-invoicing.git $OE_OCA_HOME/account-invoicing/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/account-closing.git $OE_OCA_HOME/account-closing/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/account-analytic.git $OE_OCA_HOME/account-analytic/
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/product-attribute.git $OE_OCA_HOME/product-attribute/
+
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/partner-contact.git $OE_OCA_HOME/partner-contact/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/purchase-workflow.git $OE_OCA_HOME/purchase-workflow/
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/reporting-engine.git $OE_OCA_HOME/reporting-engine/
@@ -68,6 +76,8 @@ sudo pip install -r $OE_OCA_HOME/odoo-community-addons/requirements.txt
 
 echo -e "\n==== Downloan GBS Repository and Install Dependencies ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
+sudo git clone --depth 1 --branch $OE_VERSION https://gitlab.com/genweb2ltd/gbs-account.git $OE_OCA_HOME/gbs-account/
+
 
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
