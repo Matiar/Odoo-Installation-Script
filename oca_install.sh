@@ -74,6 +74,8 @@ sudo pip install -r $OE_OCA_HOME/partner-contact/requirements.txt
 echo -e "\n === Installing requirements for odoo-community-addons ==="
 sudo pip install -r $OE_OCA_HOME/odoo-community-addons/requirements.txt
 
+sudo pip install validate_email pymongo
+
 echo -e "\n==== Downloan GBS Repository and Install Dependencies ===="
 #sudo git clone --depth 1 --branch $OE_VERSION https://github.com/genweb2/gbs.git $OE_OCA_HOME/addons/
 sudo git clone --depth 1 --branch $OE_VERSION https://gitlab.com/genweb2ltd/gbs-account.git $OE_OCA_HOME/gbs-account/
