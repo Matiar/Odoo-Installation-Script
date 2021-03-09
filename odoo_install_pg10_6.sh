@@ -64,9 +64,9 @@ sudo apt-get upgrade -y
 # Install PIP
 #--------------------------------------------------
 
-echo -e "\n---- Install PIP=20.3 ----"
+echo -e "\n---- Install PIP=20.3.4 ----"
 #curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
-#python get-pip.py pip==20.3
+#python get-pip.py pip==20.3.4
 hash -r
 
 #--------------------------------------------------
