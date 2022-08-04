@@ -68,7 +68,7 @@ sudo git clone --depth 1 --branch $OE_VERSION https://bitbucket.org/matiarrahman
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/intrastat.git $OE_OCA_HOME/intrastat/
 
 echo -e "\n === sudo pip install validate_email pymongo"
-sudo pip install validate_email pymongo
+sudo pip install validate_email pymongo qrcode
 
 echo -e "\n---- Setting permissions on home folder ----"
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
