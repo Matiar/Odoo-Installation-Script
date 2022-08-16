@@ -15,7 +15,7 @@
 ################################################################################
 ##fixed parameters
 
-OE_VERSION="10.0"
+OE_VERSION="15.0"
 
 #--------------------------------------------------
 # Get Pull From CCA Repo
@@ -33,15 +33,15 @@ cd "web"
 sudo git pull origin $OE_VERSION
 cd ../
 
-echo -e "\n---- Start Updating WEBSITE Repo ----"
-cd "website"
-sudo git pull origin $OE_VERSION
-cd ../
+#echo -e "\n---- Start Updating WEBSITE Repo ----"
+#cd "website"
+#sudo git pull origin $OE_VERSION
+#cd ../
 
-echo -e "\n---- Start Updating WEBSITE-ADDONS Repo ----"
-cd "website-addons"
-sudo git pull origin $OE_VERSION
-cd ../
+#echo -e "\n---- Start Updating WEBSITE-ADDONS Repo ----"
+#cd "website-addons"
+#sudo git pull origin $OE_VERSION
+#cd ../
 
 echo -e "\n---- Start Updating reporting-engine Repo ----"
 cd "reporting-engine"
@@ -98,15 +98,15 @@ cd "account-payment"
 sudo git pull origin $OE_VERSION
 cd ../
 
-#echo -e "\n---- Start Updating gbs-account Repo ----"
-#cd "gbs-account"
-#sudo git pull origin $OE_VERSION
-#cd ../
+echo -e "\n---- Start Updating pdcl-odoo-addons Repo ----"
+cd "pdcl-odoo-addons"
+git pull origin $OE_VERSION
+cd ../
 
-#echo -e "\n---- Start Updating odoo-addons Repo ----"
-#cd "odoo-addons"
-#sudo git pull origin $OE_VERSION
-#cd ../
+echo -e "\n---- Start Updating odoo-addons Repo ----"
+cd "odoo-addons"
+git pull origin $OE_VERSION
+cd ../
 
 echo "-----------------------------------------------------------"web
 echo "Done! "
